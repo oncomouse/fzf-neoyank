@@ -23,7 +23,6 @@ function! fzf_neoyank#run(selection, ...)
 
   call fzf#run(fzf#wrap('yank', {
         \ 'source': s:get_history(register, command, a:selection),
-        \ 'down': '40%',
         \ 'options': '+m --delimiter="\t" --with-nth 4.. --tiebreak=index',
         \ 'sink': function('s:history_sink') }))
 endfunction
